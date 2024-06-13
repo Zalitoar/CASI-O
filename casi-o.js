@@ -1,6 +1,7 @@
 "use strict";
 
-const lemniskos = 'λημνίσκος';
+/* const lemniskos = 'λημνίσκος'; */
+const lemniskos = '¯\\_(ツ)_/¯';
 const infinito = '∞';
 
 class Calcuadora {
@@ -90,7 +91,14 @@ class Calcuadora {
     // Evaluar expresión infija
     evaluar(expresion) {
         let postfija = this.infijaApostfija(expresion);
-        console.log(postfija);
+        /* if (this.evaluarpostfija(postfija) == Infinity) {
+            pantalla.cursor = lemniskos;
+            return  infinito + ' Infinito!' ;
+        } */
+        console.log(typeof this.evaluarpostfija(postfija), this.evaluarpostfija(postfija));
+        if (isNaN(this.evaluarpostfija(postfija))) {
+            return 'Error de sitanxis';
+        }
         return this.evaluarpostfija(postfija);
     }
 }
@@ -99,7 +107,7 @@ class Pantalla {
     constructor() {
         this.lineaOperacion = document.getElementById("operacion");
         this.lineaResultado = document.getElementById("resultado");
-        this.lineaCursos = document.getElementById("cursor");
+        this.lineaCursor = document.getElementById("cursor");
         this.operadores = {
             'sumar': '+',
             'restar': '-',
@@ -125,8 +133,13 @@ class Pantalla {
         this.lineaResultado.innerText = res;
     }
 
+    set cursor(cursor) {
+        this.lineaCursor.innerText = cursor;
+    }
+
     limpiar() {
         this.lineaOperacion.innerText = '';
+        this.lineaCursor.innerText = '';
         this.lineaResultado.innerText = '';
     }
 }
@@ -152,6 +165,13 @@ addEventListener("DOMContentLoaded", (event) => {
         if (valor === 'igual') {
             let expresion = pantalla.operacion;
             resultado = calc.evaluar(expresion);
+
+            if (resultado == Infinity) {
+                pantalla.cursor = lemniskos;
+                pantalla.resultado = infinito + ' Infinito!' ;
+                return;
+            }
+
             pantalla.resultado = resultado;
         }
 

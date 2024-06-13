@@ -48,6 +48,8 @@ body {
 }
 
 .operacion {
+    font-weight: 100;
+    letter-spacing: .1rem;
     padding: 5px;
     overflow: auto;
 }
@@ -55,7 +57,10 @@ body {
 .cursor {
     animation: blink .6s infinite;
     animation-fill-mode: both;
-    line-height: 0%;
+    font-weight: 300;
+    font-size: small;
+    /* padding-top: 7px; */
+    position: absolute;
 }
 
 @keyframes blink {
@@ -74,7 +79,8 @@ body {
 
 .resultado {
     font-size: x-large;
-    overflow: auto;
+    font-weight: 500;
+    overflow-x: auto;
     text-align: right;
 }
 
