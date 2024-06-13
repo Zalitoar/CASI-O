@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CASI-O</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <script src="casi-o.js"></script>
 </head>
 
@@ -17,32 +18,32 @@
     <div class="calculadora no-seleccionar">
         <span class="marca" title="Calculadora Aritmética Simple Intuitiva Opinable">CASI-O</span>
         <div id="pantalla" class="pantalla seleccionar">
-            <div id="operacion" class="operacion">42342 ÷ + ∞ ∓</div>
-            <!-- <div id="cursor" class="cursor">_</div> -->
-            <div id="resultado" class="resultado">∞ ∓ 63424</div>
+            <div id="operacion" class="operacion"></div>
+            <div id="cursor" class="cursor"></div>
+            <div id="resultado" class="resultado"></div>
         </div>
-        <div id="botones" class="grid">
-            <div id="btn-limpiar" class="btn btn-operacion">C</div>
-            <div id="btn-parentesis" class="btn btn-operacion">()</div>
-            <div id="btn-porcentaje" class="btn btn-operacion">%</div>
-            <div id="btn-dividir" class="btn btn-operacion">:</div>
-            <div id="btn-7" class="btn btn-numero">7</div>
-            <div id="btn-8" class="btn btn-numero">8</div>
-            <div id="btn-9" class="btn btn-numero">9</div>
-            <div id="btn-multiplicar" class="btn btn-operacion">x</div>
-            <div id="btn-4" class="btn btn-numero">4</div>
-            <div id="btn-5" class="btn btn-numero">5</div>
-            <div id="btn-6" class="btn btn-numero">6</div>
-            <div id="btn-restar" class="btn btn-operacion">-</div>
-            <div id="btn-1" class="btn btn-numero">1</div>
-            <div id="btn-2" class="btn btn-numero">2</div>
-            <div id="btn-3" class="btn btn-numero">3</div>
-            <div id="btn-sumar" class="btn btn-operacion">+</div>
-            <div id="btn-signo" class="btn btn-operacion">+/-</div>
-            <div id="btn-1" class="btn btn-numero">0</div>
-            <div id="btn-decimal" class="btn btn-operacion">.</div>
-            <div id="btn-igual" class="btn btn-igual">=</div>
-        </div>
+        <div id="teclado" class="teclado">
+            <button id="btn-limpiar" class="btn btn-operacion" value="limpiar">C</button>
+            <button id="btn-parentesis" class="btn btn-operacion" value="parentesis">()</button>
+            <button id="btn-porcentaje" class="btn btn-operacion" value="porcentaje">%</button>
+            <button id="btn-dividir" class="btn btn-operacion" value="dividir">:</button>
+            <button id="btn-7" class="btn btn-numero" value="7">7</button>
+            <button id="btn-8" class="btn btn-numero" value="8">8</button>
+            <button id="btn-9" class="btn btn-numero" value="9">9</button>
+            <button id="btn-multiplicar" class="btn btn-operacion" value="multiplicar">x</button>
+            <button id="btn-4" class="btn btn-numero" value="4">4</button>
+            <button id="btn-5" class="btn btn-numero" value="5">5</button>
+            <button id="btn-6" class="btn btn-numero" value="6">6</button>
+            <button id="btn-restar" class="btn btn-operacion" value="restar">-</button>
+            <button id="btn-1" class="btn btn-numero" value="1">1</button>
+            <button id="btn-2" class="btn btn-numero" value="2">2</button>
+            <button id="btn-3" class="btn btn-numero" value="3">3</button>
+            <button id="btn-sumar" class="btn btn-operacion" value="sumar">+</button>
+            <button id="btn-signo" class="btn btn-operacion" value="signo">+/-</button>
+            <button id="btn-0" class="btn btn-numero" value="0">0</button>
+            <button id="btn-decimal" class="btn btn-operacion" value="decimal">.</button>
+            <button id="btn-igual" class="btn btn-igual" value="igual">=</button>
+        </button>
     </div>
 </body>
 
