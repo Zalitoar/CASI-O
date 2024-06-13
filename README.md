@@ -9,9 +9,9 @@ The FontStruction “FX-4000P” (https://fontstruct.com/fontstructions/show/908
 
 # To do
 
-- [] Editar operación ya escrita
-- [] Detectar paréntesis sin cerrar
-- [] Evaluar prioridad de operaciones anidadas
-- [] Corregir manejo de decimales
-- [] Manejo de signos
-- [] Cálculo de porcentaje
+- [ ] Editar operación ya escrita
+- [ ] Detectar paréntesis sin cerrar
+- [ ] Evaluar prioridad de operaciones anidadas
+- [ ] Corregir manejo de decimales
+- [ ] Manejo de signos
+- [ ] Cálculo de porcentaje
