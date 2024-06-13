@@ -16,7 +16,7 @@ class Calcuadora {
                 asociatividad: 'Izquierda',
                 fn: (a, b) => a * b
             },
-            '/': {
+            '÷': {
                 precedencia: 3,
                 asociatividad: 'Izquierda',
                 fn: (a, b) => a / b
@@ -38,7 +38,7 @@ class Calcuadora {
     infijaApostfija(expresion) {
         let colaSalida = [];
         let pilaOperadores = [];
-        let tokens = expresion.match(/(\d+|\^|\*|\/|\+|\-|\(|\))/g);
+        let tokens = expresion.match(/(\d+|\^|\*|\÷|\+|\-|\(|\))/g);
 
         tokens.forEach(token => {
             if (!isNaN(token)) {
@@ -104,10 +104,11 @@ class Pantalla {
             'sumar': '+',
             'restar': '-',
             'multiplicar': '*',
-            'dividir': '/',/* '÷', */
+            'dividir': '÷',
             'parentesis': '()',
             'porcentaje': '%',
-            'decimal': '.'
+            'decimal': '.',
+            'exponente': '^'
         };
     }
 
