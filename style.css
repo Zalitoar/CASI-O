@@ -49,6 +49,7 @@ body {
 
 .operacion {
     padding: 5px;
+    overflow: auto;
 }
 
 .cursor {
@@ -94,7 +95,7 @@ body {
     user-select: text;
 }
 
-.grid {
+.teclado {
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);
