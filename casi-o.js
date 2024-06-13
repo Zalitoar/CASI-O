@@ -1,6 +1,7 @@
 "use strict";
 
 const lemniskos = 'λημνίσκος';
+const infinito = '∞';
 
 class Calcuadora {
     constructor() {
@@ -32,8 +33,6 @@ class Calcuadora {
             }
         };
     }
-
-
 
     // Convierte la notación infija a postfija (Notación Polaca Inversa) usando el algoritmo Shunting-yard
     infijaApostfija(expresion) {
@@ -96,8 +95,75 @@ class Calcuadora {
     }
 }
 
+class Pantalla {
+    constructor() {
+        this.lineaOperacion = document.getElementById("operacion");
+        this.lineaResultado = document.getElementById("resultado");
+        this.lineaCursos = document.getElementById("cursor");
+        this.operadores = {
+            'sumar': '+',
+            'restar': '-',
+            'multiplicar': '*',
+            'dividir': '/',/* '÷', */
+            'parentesis': '()',
+            'porcentaje': '%',
+            'decimal': '.'
+        };
+    }
+
+    get operacion() {
+        return this.lineaOperacion.innerText;
+    }
+
+    set operacion(operando) {
+        this.lineaOperacion.innerText += this.operadores[operando] ?? operando;
+        this.lineaOperacion.innerText += ' ';
+    }
+
+    set resultado(res) {
+        this.lineaResultado.innerText = res;
+    }
+
+    limpiar() {
+        this.lineaOperacion.innerText = '';
+        this.lineaResultado.innerText = '';
+    }
+}
+
+addEventListener("DOMContentLoaded", (event) => {
+    const teclado = document.getElementById("teclado");
+    const calc = new Calcuadora();
+    const pantalla = new Pantalla();
+
+    teclado.addEventListener("click", event => {
+        const esBoton = event.target.classList.contains('btn');
+
+        if (!esBoton) {
+            return;
+        }
+
+        let valor = event.target.value;
+
+        if (valor === 'limpiar') {
+            pantalla.limpiar();
+        }
+
+        if (valor === 'igual') {
+            let expresion = pantalla.operacion;
+            resultado = calc.evaluar(expresion);
+            pantalla.resultado = resultado;
+        }
+
+        if (valor != 'igual' && valor != 'limpiar') {
+            pantalla.operacion = valor;
+        }
+        // console.log(event.target.value);
+    });
+});
+
 // Ejemplo de uso:
-const calc = new Calcuadora();
-const expresion = "2* 3 + 3 * ( 10 - 4 ) + 5 * (2)"; // "3 + 5 * (2 ^ 3 - 1)";
-const resultado = calc.evaluar(expresion);
-console.log(`${expresion} = ${resultado}`); // Devuelve: 3 + 5 * (2 ^ 3 - 1) = 38
+/* const expresion = "2* 3 + 3 * ( 10 - 4 ) + 5 * (2)";  */
+// "3 + 5 * (2 ^ 3 - 1)";
+/* const resultado = calc.evaluar(expresion); */
+/* console.log(`${expresion} = ${resultado}`); */
+// Devuelve: 3 + 5 * (2 ^ 3 - 1) = 38
