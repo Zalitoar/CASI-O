@@ -3,7 +3,7 @@ Calculadora Aritmética Simple Intuitiva Opinable
 
 ![CASI-O](assets/images/casi-o.png)
 
-**![DEMO](https://zalitoar.github.io/CASI-O)**
+**[DEMO](https://zalitoar.github.io/CASI-O)**
 
 # Atribuciones
 
