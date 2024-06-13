@@ -74,6 +74,7 @@ body {
 
 .resultado {
     font-size: x-large;
+    overflow: auto;
     text-align: right;
 }
 
